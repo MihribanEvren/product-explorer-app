@@ -8,10 +8,10 @@ import { Rating } from '@mui/material';
 
 function ProductCard({ product }) {
   return (
-    <Card className="h-[500px] flex flex-col justify-between">
+    <Card className="h-[520px] flex flex-col justify-between pb-2">
       <CardMedia
         component="img"
-        className="max-h-[250px] object-contain"
+        className="object-contain max-h-64"
         image={product.thumbnail}
         title={product.title}
       />

@@ -4,7 +4,9 @@ function MainLayout({ children }) {
   return (
     <div>
       <Navbar />
-      <main>{children}</main>
+      <main className="pt-16">
+        <div className="p-6 mx-auto ">{children}</div>
+      </main>
     </div>
   );
 }

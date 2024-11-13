@@ -4,34 +4,47 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Rating } from '@mui/material';
+import { Box, CardActionArea, Rating } from '@mui/material';
 
 function ProductCard({ product }) {
   return (
-    <Card className="h-[520px] flex flex-col justify-between pb-2">
-      <CardMedia
-        component="img"
-        className="object-contain max-h-64"
-        image={product.thumbnail}
-        title={product.title}
-      />
-      <CardContent className="flex flex-col items-center gap-3">
-        <Typography gutterBottom variant="h6" component="div">
-          {product.title}
-        </Typography>
-        <Typography
-          variant="body2"
-          className="overflow-hidden text-gray-500 text-ellipsis line-clamp-3"
-        >
-          {product.description}
-        </Typography>
-        <div className="flex items-center justify-center gap-1">
-          <Typography component="legend" variant="body2">
-            {product.rating}
+    <Card className="h-[540px] flex flex-col justify-between pb-2">
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          className="object-contain max-h-64"
+          image={product.thumbnail}
+          title={product.title}
+        />
+        <CardContent className="flex flex-col items-center flex-grow gap-3">
+          <Typography
+            gutterBottom
+            variant="h6"
+            component="div"
+            className="h-12"
+          >
+            {product.title}
           </Typography>
-          <Rating name="simple-controlled" value={product.rating} />
-        </div>
-      </CardContent>
+          <Typography
+            variant="body2"
+            className="overflow-hidden text-gray-500 text-ellipsis line-clamp-3"
+          >
+            {product.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <Box className="flex items-center justify-center gap-1">
+        <Typography component="legend" variant="body2">
+          {product.rating.toFixed(1)}
+        </Typography>
+        <Rating name="simple-controlled" value={product.rating} />
+      </Box>
+      <Typography
+        variant="h6"
+        className="flex items-center justify-center text-red-500"
+      >
+        ${product.price}
+      </Typography>
       <CardActions className="flex items-center justify-center">
         <Button size="small" variant="outlined" color="secondary">
           Add to Cart

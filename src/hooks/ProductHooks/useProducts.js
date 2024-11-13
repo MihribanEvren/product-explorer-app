@@ -18,6 +18,7 @@ export const useProducts = () => {
       }
     },
     defaultOptions: {
+      refetchOnWindowFocus: false,
       refetchInterval: 10 * MINUTE,
       staleTime: 5 * MINUTE,
       cacheTime: 10 * MINUTE,

@@ -6,15 +6,10 @@ import SearchInput from './SearchInput';
 
 function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box className="flex-grow">
       <AppBar position="fixed" color="secondary">
         <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { sm: 'block' } }}
-          >
+          <Typography variant="h6" noWrap component="div" className="flex-grow">
             CLOUD ☁️
           </Typography>
           <SearchInput placeholder="Search" />

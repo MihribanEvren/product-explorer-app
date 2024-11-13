@@ -13,9 +13,9 @@ const ProductList = () => {
       <Grid2
         container
         spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 1, sm: 8, md: 12 }}
+        columns={{ xs: 1, sm: 8, md: 12, lg: 16, xl: 20 }}
       >
-        {Array.from(new Array(3)).map((_, index) => (
+        {Array.from(new Array(5)).map((_, index) => (
           <ProductSkeleton key={index} />
         ))}
       </Grid2>

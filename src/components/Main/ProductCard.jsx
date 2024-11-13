@@ -5,33 +5,36 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, CardActionArea, Rating } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   return (
     <Card className="h-[540px] flex flex-col justify-between pb-2">
       <CardActionArea>
-        <CardMedia
-          component="img"
-          className="object-contain max-h-64"
-          image={product.thumbnail}
-          title={product.title}
-        />
-        <CardContent className="flex flex-col items-center flex-grow gap-3">
-          <Typography
-            gutterBottom
-            variant="h6"
-            component="div"
-            className="h-12"
-          >
-            {product.title}
-          </Typography>
-          <Typography
-            variant="body2"
-            className="overflow-hidden text-gray-500 text-ellipsis line-clamp-3"
-          >
-            {product.description}
-          </Typography>
-        </CardContent>
+        <Link to={`/product/${product.id}`}>
+          <CardMedia
+            component="img"
+            className="object-contain max-h-64"
+            image={product.thumbnail}
+            title={product.title}
+          />
+          <CardContent className="flex flex-col items-center flex-grow gap-3">
+            <Typography
+              gutterBottom
+              variant="h6"
+              component="div"
+              className="h-12"
+            >
+              {product.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              className="overflow-hidden text-gray-500 text-ellipsis line-clamp-3"
+            >
+              {product.description}
+            </Typography>
+          </CardContent>
+        </Link>
       </CardActionArea>
       <Box className="flex items-center justify-center gap-1">
         <Typography component="legend" variant="body2">

@@ -1,6 +1,6 @@
 import { Pagination as MuiPagination } from '@mui/material';
 import { useFiltersStore } from '../../state/filtersStore';
-import { useProducts } from '../../hooks/ProductHooks/useProducts';
+import { useProducts } from '../../hooks/productHooks/useProducts';
 
 function Pagination() {
   const { itemsPerPage, currentPage, setCurrentPage } = useFiltersStore();

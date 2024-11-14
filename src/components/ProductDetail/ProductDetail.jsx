@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { useProduct } from '../../hooks/ProductHooks/useProduct';
-import ProductSkeleton from '../Main/ProductSkeleton';
+import { useProduct } from '../../hooks/productHooks/useProduct';
+import ProductSkeleton from '../main/ProductSkeleton';
 import {
   Box,
   Button,
@@ -17,19 +17,15 @@ function ProductDetail() {
   const { id } = useParams();
   const { currentProduct, isLoading, isError, error } = useProduct(id);
 
-  if (isLoading)
+  if (isLoading) {
     return (
-      <Grid2
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 1, sm: 8, md: 12, lg: 16, xl: 20 }}
-        className="min-h-[calc(100vh-4rem)]"
-      >
-        {Array.from(new Array(5)).map((_, index) => (
+      <Grid2 container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 8 }}>
+        {Array.from(new Array(2)).map((_, index) => (
           <ProductSkeleton key={index} />
         ))}
       </Grid2>
     );
+  }
 
   if (isError)
     return (

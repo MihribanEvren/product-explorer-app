@@ -40,7 +40,7 @@ function ProductCard({ product }) {
         <Typography component="legend" variant="body2">
           {product.rating.toFixed(1)}
         </Typography>
-        <Rating name="simple-controlled" value={product.rating} />
+        <Rating name="simple-controlled" readOnly value={product.rating} />
       </Box>
       <Typography
         variant="h6"

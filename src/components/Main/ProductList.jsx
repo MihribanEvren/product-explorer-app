@@ -1,4 +1,4 @@
-import { useProducts } from '../../hooks/ProductHooks/useProducts';
+import { useProducts } from '../../hooks/productHooks/useProducts';
 import { Grid2 } from '@mui/material';
 import ProductCard from './ProductCard';
 import ProductSkeleton from './ProductSkeleton';
@@ -13,9 +13,9 @@ const ProductList = () => {
       <Grid2
         container
         spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 1, sm: 8, md: 12, lg: 16, xl: 20 }}
+        columns={{ xs: 1, sm: 8, md: 12 }}
       >
-        {Array.from(new Array(5)).map((_, index) => (
+        {Array.from(new Array(3)).map((_, index) => (
           <ProductSkeleton key={index} />
         ))}
       </Grid2>
@@ -43,7 +43,7 @@ const ProductList = () => {
         columns={{ xs: 1, sm: 8, md: 12, lg: 16, xl: 20 }}
       >
         {currentProducts.map((product) => (
-          <Grid2 key={product.id} size={{ xs: 2, sm: 4, md: 4 }}>
+          <Grid2 key={product.id} size={{ xs: 1, sm: 4 }}>
             <ProductCard product={product} />
           </Grid2>
         ))}

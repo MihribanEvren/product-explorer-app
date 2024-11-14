@@ -1,4 +1,4 @@
-import ProductDetail from '../components/ProductDetail/ProductDetail';
+import ProductDetail from '../components/productDetail/ProductDetail';
 import MainLayout from '../layouts/MainLayout';
 
 function ProductDetailPage() {

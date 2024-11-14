@@ -9,7 +9,7 @@ import {
 
 const ProductSkeleton = () => {
   return (
-    <Grid2 size={{ xs: 2, sm: 4, md: 4 }}>
+    <Grid2 size={{ xs: 1, sm: 4 }}>
       <Card>
         <CardMedia>
           <Skeleton variant="rectangular" width="100%" height={280} />

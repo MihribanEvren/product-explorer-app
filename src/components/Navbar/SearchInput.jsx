@@ -8,7 +8,7 @@ import {
   InputBase,
   Paper,
 } from '@mui/material';
-import { useProducts } from '../../hooks/ProductHooks/useProducts';
+import { useProducts } from '../../hooks/productHooks/useProducts';
 import { Link } from 'react-router-dom';
 
 function SearchInput({ placeholder }) {

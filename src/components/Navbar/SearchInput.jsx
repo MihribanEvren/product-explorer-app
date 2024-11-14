@@ -25,7 +25,7 @@ function SearchInput({ placeholder }) {
   };
 
   return (
-    <Box className="relative w-full max-w-xs sm:max-w-lg">
+    <Box className="relative w-full max-w-xs md:max-w-xl">
       <Box className="relative flex items-center">
         <InputBase
           value={searchQuery}

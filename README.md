@@ -56,8 +56,9 @@ src
 ### Kullanılan Kütüphaneler
 
 - **React:** UI componentleri oluşturmak için
+- **TanStack Query:** API istekleri ile veri çekme işlemlerini yönetmek için
 - **Zustand:** Global state management
-- **Tanstack - Material UI:** Stil ve layout düzeni
+- **Tailwind - Material UI:** Stil ve layout düzeni
 - **React Router:** Routing işlemleri için
 
 ### Özellikler

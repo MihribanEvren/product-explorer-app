@@ -1,5 +1,5 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
-import { useFiltersStore } from '../../state/filtersStore';
+import { useFiltersStore } from '../../state/productStore/filtersStore';
 
 function ItemCount() {
   const { itemsPerPage, setItemsPerPage } = useFiltersStore();

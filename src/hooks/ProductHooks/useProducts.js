@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchProducts } from '../../api/productApi/fetchProducts';
-import { useFiltersStore } from '../../state/filtersStore';
+import { useFiltersStore } from '../../state/productStore/filtersStore';
 
 export const useProducts = (searchQuery) => {
   const { itemsPerPage, currentPage } = useFiltersStore();

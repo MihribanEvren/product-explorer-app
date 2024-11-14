@@ -1,5 +1,5 @@
 import { Pagination as MuiPagination } from '@mui/material';
-import { useFiltersStore } from '../../state/filtersStore';
+import { useFiltersStore } from '../../state/productStore/filtersStore';
 import { useProducts } from '../../hooks/productHooks/useProducts';
 
 function Pagination() {

@@ -1,4 +1,4 @@
-import ProductList from '../components/Main/ProductList';
+import ProductList from '../components/main/ProductList';
 import MainLayout from '../layouts/MainLayout';
 
 function HomePage() {

@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   return (
-    <Card className="h-[540px] flex flex-col justify-between pb-2">
+    <Card className="h-[520px] flex flex-col justify-between pb-2">
       <CardActionArea>
         <Link to={`/product/${product.id}`}>
           <CardMedia
             component="img"
             className="object-contain max-h-64"
             image={product.thumbnail}
-            title={product.title}
+            alt={product.title}
           />
           <CardContent className="flex flex-col items-center flex-grow gap-3">
             <Typography
@@ -29,7 +29,7 @@ function ProductCard({ product }) {
             </Typography>
             <Typography
               variant="body2"
-              className="overflow-hidden text-gray-500 text-ellipsis line-clamp-3"
+              className="overflow-hidden text-gray-500 text-ellipsis line-clamp-2"
             >
               {product.description}
             </Typography>
@@ -44,9 +44,9 @@ function ProductCard({ product }) {
       </Box>
       <Typography
         variant="h6"
-        className="flex items-center justify-center text-red-500"
+        className="flex items-center justify-center font-bold text-purple-600"
       >
-        ${product.price}
+        ${product.price.toFixed(2)}
       </Typography>
       <CardActions className="flex items-center justify-center">
         <Button size="small" variant="outlined" color="secondary">

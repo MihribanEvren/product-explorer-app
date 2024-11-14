@@ -14,7 +14,7 @@ function ProductCard({ product }) {
         <Link to={`/product/${product.id}`}>
           <CardMedia
             component="img"
-            className="object-contain max-h-64"
+            className="object-contain max-h-56"
             image={product.thumbnail}
             alt={product.title}
           />

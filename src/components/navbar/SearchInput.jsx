@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 
 function SearchInput({ placeholder }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
   const { currentProducts, isLoading } = useProducts(searchQuery);
 
   const handleChange = (e) => {
@@ -29,6 +30,8 @@ function SearchInput({ placeholder }) {
         <InputBase
           value={searchQuery}
           onChange={handleChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setTimeout(() => setIsFocused(false), 100)}
           placeholder={placeholder || 'Search'}
           className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500"
           endAdornment={
@@ -68,7 +71,7 @@ function SearchInput({ placeholder }) {
         />
       </Box>
 
-      {searchQuery && !isLoading && (
+      {searchQuery && !isLoading && isFocused && (
         <Paper
           elevation={2}
           sx={{

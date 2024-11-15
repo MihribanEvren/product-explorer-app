@@ -40,7 +40,7 @@ const ProductList = () => {
       <Grid2
         container
         spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 1, sm: 8, md: 12, lg: 16, xl: 20 }}
+        columns={{ xs: 1, sm: 8, md: 12, lg: 16 }}
       >
         {currentProducts.map((product) => (
           <Grid2 key={product.id} size={{ xs: 1, sm: 4 }}>

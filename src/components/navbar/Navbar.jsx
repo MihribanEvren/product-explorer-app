@@ -17,7 +17,7 @@ function Navbar() {
               component="div"
               className="flex-grow"
             >
-              CLOUD ☁️
+              ☁️
             </Typography>
           </Link>
           <SearchInput placeholder="Search" />

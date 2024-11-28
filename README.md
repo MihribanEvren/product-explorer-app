@@ -1,101 +1,100 @@
 # Product Explorer App
 
-- API'dan çektiğimiz ürünleri listelemeyi, ürün aramayı ve ürünün detaylarına göz atabilmeyi sağlayan bir uygulama.
-- Proje structure'ını gelişime ve yeni feature'lar eklemeye açık, clean bir yapıda kurdum.
-- Örneğin, bir özellik olarak API'dan kullanıcıları çekmeye karar verdiğimizde, `src/api` altında `userApi` klasörünü oluşturabilir ve bu işlemleri yönetmek için `userHooks` klasörünü ekleyebiliriz.
-- Her sayfada kullanılacak bir bileşen eklememiz gerektiğinde, bunu yalnızca `MainLayout` bileşenine eklememiz yeterli olur.
+- A modern application that allows users to list products fetched from an API, search for products, and view detailed information about individual products.
+- The project structure is designed to be clean and scalable, making it easy to add new features or extend existing ones.
+- For instance, if you decide to fetch users from the API in the future, you can simply add a userApi folder under `src/api` and a `userHooks` folder to manage the logic.
 
 #### Live Demo: https://product-explorer-app.netlify.app/
 
-## Klasör Yapısı
+## Folder Structure
 
 ```plaintext
 src
 │
-├── api                       # API işlemleri
-│   └── productApi            # Product API istekleri
-│       ├── fetchProducts.js  # Tüm productları çekmek için fetch func.
-│       └── fetchProduct.js   # Id'ye göre tek product çektiğimiz fetch func.
+├── api                       # API interactions
+│   └── productApi            # Product API requests
+│       ├── fetchProducts.js  # Function to fetch all products
+│       └── fetchProduct.js   # Function to fetch a single product by ID
 │
-├── hooks                     # Custom hook’lar
-│   └── productHooks          # Productlar için hook'lar
-│       ├── useProducts.js    # Tüm ürün verilerini Tanstack Query ile çekmeyi yönetmek için hook
-│       └── useProduct.js     # Tek bir ürün verisini çekmek için Tanstack Query hook'u
+├── hooks                     # Custom hooks
+│   └── productHooks          # Hooks for products
+│       ├── useProducts.js    # Hook to manage fetching all products with TanStack Query
+│       └── useProduct.js     # Hook to fetch a single product with TanStack Query
 │
-├── state                     # Zustand ile state yönetimi
-│   └── productStore          # Product için store
-│       ├── productsStore.js  # Toplam ürün sayısını tutan state
-│       └── filtersStore.js   # Filtreleme ve sayfalama state'leri
+├── state                     # State management with Zustand
+│   └── productStore          # Store for product-related states
+│       ├── productsStore.js  # Global state for all products
+│       └── filtersStore.js   # State for filtering and pagination
 │
-├── layouts                   # Ortak layout bileşeni
-│   └── MainLayout.jsx        # Navbar ve ortak bileşenleri içeren ana layout (Navbar + child)
+├── layouts                   # Layout components
+│   └── MainLayout.jsx        # Main layout including Navbar and shared components (Navbar + child)
 │
-├── components                    # React componentleri
+├── components                    # React components
 │   ├── navbar                    # Navigation bar
-│   │   ├── Navbar.jsx            # Main navbar
-│   │   └── SearchInput.jsx       # Ürün arama
-│   ├── sidebar                   # Yan menü (Geliştirilebilecek Feature)
-│   │   └── Sidebar.jsx           # Kategori, marka, fiyat filtresi için yan menü
+│   │   ├── Navbar.jsx            # Main navigation bar
+│   │   └── SearchInput.jsx       # Search input for products
+│   ├── sidebar                   # Sidebar (Future feature)
+│   │   └── Sidebar.jsx           # Sidebar for categories, brands, and price filtering
 │   ├── main
-│   │   ├── ProductList.jsx       # Ürünlerin listelendiği bileşen
-│   │   ├── ProductCard.jsx       # Her ürün için kart yapısı
-│   │   ├── Pagination.jsx        # Sayfa numaralandırma
-│   │   ├── ItemCount.jsx         # Sayfa başına ürün sayısı seçimi
-│   │   └── ProductSkeleton.jsx   # Yüklenme sırasında gösterilecek iskelet yapısı
-│   └── productDetail             # Ürün detay
-│       └── ProductDetail.jsx     # Seçilen ürünün detayları
+│   │   ├── ProductList.jsx       # Component to list all products
+│   │   ├── ProductCard.jsx       # Card component for individual products
+│   │   ├── Pagination.jsx        # Pagination component
+│   │   ├── ItemCount.jsx         # Component for selecting items per page
+│   │   └── ProductSkeleton.jsx   # Skeleton loading component
+│   └── productDetail             # Product detail components
+│       └── ProductDetail.jsx     # Component to display details of a selected product
 │
-├── pages                         # Sayfalar
-│   ├── HomePage.jsx              # Ana sayfa ve Ürün listesi (Navbar + Main)
-│   └── ProductDetailPage.jsx     # Ürün detay sayfası (Navbar + ProductDetail)
+├── pages                         # Application pages
+│   ├── HomePage.jsx              # Home page with product list (Navbar + Main)
+│   └── ProductDetailPage.jsx     # Product detail page (Navbar + ProductDetail)
 │
-├── App.jsx                       # Ana uygulama ve routing yapısı
+├── App.jsx                       # Main application and routing setup
 └── main.jsx
 ```
 
-### Kullanılan Kütüphaneler
+### Technologies Used
 
-- **React:** UI componentleri oluşturmak için
-- **TanStack Query:** API istekleri ile veri çekme işlemlerini yönetmek için
+- **React:** For creating UI components
+- **TanStack Query:** Manage API calls and data fetching
 - **Zustand:** Global state management
-- **Tailwind - Material UI:** Stil ve layout düzeni
-- **React Router:** Routing işlemleri için
+- **Tailwind - Material UI:** Styling and layout
+- **React Router:** Client-side routing
 
-### Özellikler
+### Features
 
-- Ürün listeleme
-- Sayfa başına ürün sayısı seçimi
-- Sayfalama
-- Ürün detay sayfası
-- Search input ile arama yapma
+- Product listing
+- Selecting the number of products displayed per page
+- Pagination
+- Product detail page
+- Searching for products using the search input
 
-### Geliştirilebilir Özellikler
+### Potential Enhancements
 
-- Sidebar kısmı ile dinamik ürün filtreleme
-- Sepet işlemleri
+- **Sidebar:** Add dynamic product filtering based on categories, brands, and prices
+- **Cart:** Enable users to add products to a shopping cart
 
-### Kurulum
+### Installation
 
-Bu projeyi kendi bilgisayarınızda çalıştırmak isterseniz:
+Follow these steps to set up the project locally:
 
-#### 1. Depoyu yerel ortamınıza klonlayın
+#### 1. Clone the repository
 
 ```
-git clone https://github.com/mihribanevren/product-explorer-app.git
+git clone https://github.com/MihribanEvren/product-explorer-app.git
 ```
 
-#### 2. Bağımlılıkları yükleyin
+#### 2. Install dependencies
 
 ```
 npm install
 ```
 
-#### 3. Projeyi başlatın
+#### 3. Start the development server
 
 ```
 npm run dev
 ```
 
-#### 4. Projeyi tarayıcıda görüntüleyin
+### 🙌 Contributing
 
-Projeyi başlattıktan sonra, varsayılan olarak http://localhost:5173 adresinde çalışacaktır.
+Contributions are welcome! If you’d like to contribute to the project, feel free to fork the repository and submit a pull request.

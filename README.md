@@ -4,7 +4,9 @@
 - The project structure is designed to be clean and scalable, making it easy to add new features or extend existing ones.
 - For instance, if you decide to fetch users from the API in the future, you can simply add a userApi folder under `src/api` and a `userHooks` folder to manage the logic.
 
-#### Live Demo: https://product-explorer-app.netlify.app/
+### 🚀 Live Demo:
+
+Check out the live demo: [Product Explorer App](https://product-explorer-app.netlify.app/)
 
 ## Folder Structure
 
